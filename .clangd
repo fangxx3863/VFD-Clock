@@ -1,0 +1,14 @@
+CompileFlags:
+    Remove:
+        - --apcs=interwork
+        - --cpu
+        - --li
+        - --c99
+        - --split_sections
+        - --diag_suppress=1
+        - --diag_suppress=1295
+        - --no_depend_system_headers
+        - --depend
+    Add:
+        - -ferror-limit=0
+    CompilationDatabase: ./build/VFD-Clock
