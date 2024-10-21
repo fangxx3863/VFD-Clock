@@ -34,7 +34,7 @@
 *.app
 *.i*86
 *.x86_64
-*.hex
+# *.hex
 
 # Debug files
 *.dSYM/
@@ -54,4 +54,4 @@ dkms.conf
 # Custom
 build
 .cache
-
+MDK-ARM/VFD-Clock

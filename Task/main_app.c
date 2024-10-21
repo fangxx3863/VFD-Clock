@@ -43,12 +43,18 @@ void main_app(void) {
                 led_en(0);
                 HAL_GPIO_WritePin(WS2812_POWER_GPIO_Port, WS2812_POWER_Pin, GPIO_PIN_SET);
                 VFD_GfxSetText("LEDOFF");
+                HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, 1);
+                osDelay(10);
+                HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, 0);
                 osDelay(500);
             }else {
                 ws2812_en = !ws2812_en;
                 led_en(1);
                 HAL_GPIO_WritePin(WS2812_POWER_GPIO_Port, WS2812_POWER_Pin, GPIO_PIN_RESET);
                 VFD_GfxSetText("LED ON");
+                HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, 1);
+                osDelay(10);
+                HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, 0);
                 osDelay(500);
             }
         }
@@ -60,6 +66,9 @@ void main_app(void) {
             if (brightness < 1) {
                 brightness = 7;
             }
+            HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, 1);
+            osDelay(10);
+            HAL_GPIO_WritePin(BUZZER_GPIO_Port, BUZZER_Pin, 0);
             VFD_GfxSetBlkLevel(brightness);
 
         }
