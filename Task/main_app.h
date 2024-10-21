@@ -2,8 +2,8 @@
 #define __MAIN_APP_H__
 #include "main.h"
 
-void periph_init(void);
-void main_app(void);
+void periph_init();
+void main_app();
 void clock_page();
 void date_page();
 void temperature_page();
